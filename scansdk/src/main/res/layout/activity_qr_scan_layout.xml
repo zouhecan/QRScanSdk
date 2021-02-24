@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/previewSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.qiushan.scansdk.QRFinderView
+            android:id="@+id/finderView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="15dip"
+        android:paddingTop="15dip"
+        android:paddingRight="15dip">
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/back_icon" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/lightCheckBox"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:background="@null"
+                android:button="@drawable/qrcode_light_selector" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

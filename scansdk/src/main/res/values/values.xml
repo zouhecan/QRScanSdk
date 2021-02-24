@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="baseqrcode_blood_red">#FF3B30</color>
+    <color name="baseqrcode_blood_red_aaa">#AAFF3B30</color>
+    <color name="baseqrcode_possible_result_points">#c0ffff00</color>
+    <color name="baseqrcode_ui_bg_divider9">#e8e8e8</color>
+    <color name="baseqrcode_viewfinder_mask">#80000000</color>
+    <item name="auto_focus" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+    <string name="baseqrcode_scan_guide">将二维码/条形码放入框内，即可自动扫描</string>
+</resources>

@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/cameraContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <SurfaceView
-            android:id="@+id/previewSurfaceView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <com.qiushan.scansdk.QRFinderView
-            android:id="@+id/finderView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </RelativeLayout>
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:paddingLeft="15dip"
         android:paddingTop="15dip"
         android:paddingRight="15dip">
@@ -51,4 +40,4 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</FrameLayout>

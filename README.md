@@ -15,7 +15,7 @@ Step 1. Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.zouhecan:QRScanSdk:2.0'
+	        implementation 'com.github.zouhecan:QRScanSdk:2.1'
 	}
 ![](https://jitpack.io/v/zouhecan/QRScanSdk.svg)](https://jitpack.io/#zouhecan/QRScanSdk)
 

@@ -47,8 +47,6 @@ class QRScanActivity : AppCompatActivity(), SurfaceHolder.Callback {
         previewSurfaceView.visibility = View.GONE
         //返回
         backBtn.setOnClickListener {
-            scanResultInterface?.qrscanFinishedWithResult(null)
-            scanResultInterface = null
             finish()
         }
         //手电筒
@@ -80,7 +78,8 @@ class QRScanActivity : AppCompatActivity(), SurfaceHolder.Callback {
             }
 
             try {
-                val uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.common_voice_1)
+                val uri =
+                    Uri.parse("android.resource://" + packageName + "/" + R.raw.common_voice_1)
                 soundPlayer!!.setDataSource(this, uri)
                 soundPlayer!!.setVolume(1.0f, 1.0f)
                 soundPlayer!!.prepare()
@@ -122,7 +121,11 @@ class QRScanActivity : AppCompatActivity(), SurfaceHolder.Callback {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1) {
             previewSurfaceView!!.visibility = View.VISIBLE
@@ -145,6 +148,7 @@ class QRScanActivity : AppCompatActivity(), SurfaceHolder.Callback {
     override fun onDestroy() {
         super.onDestroy()
         inactivityTimer.shutdown()
+        QRScanManager.removeCallback()
     }
 
     override fun surfaceCreated(holder: SurfaceHolder) {
@@ -191,14 +195,8 @@ class QRScanActivity : AppCompatActivity(), SurfaceHolder.Callback {
     }
 
     private fun handleScanResult(result: String) {
-        Toast.makeText(this, "扫码成功$result", Toast.LENGTH_LONG).show()
-        Handler(Looper.getMainLooper()).postDelayed({
-            if (scanResultInterface != null) {
-                scanResultInterface!!.qrscanFinishedWithResult(result)
-            } else {
-                finish()
-            }
-        }, 1000)
+        QRScanManager.sendScanResult(result)
+        finish()
     }
 
     fun getViewfinderView(): QRFinderView? {
@@ -215,18 +213,5 @@ class QRScanActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
     fun drawViewfinder() {
         finderView!!.drawViewfinder()
-    }
-
-    interface IBaseQRScanResultInterface {
-        fun qrscanFinishedWithResult(var1: String?)
-    }
-
-    companion object {
-        private const val BEEP_VOLUME = 1.0f
-        private var scanResultInterface: IBaseQRScanResultInterface? = null
-        private const val REQUEST_PERMISSION_CAMERA_CODE = 1
-        fun setBaseQRScanResultInterface(iBaseQRScanResultInterface: IBaseQRScanResultInterface?) {
-            scanResultInterface = iBaseQRScanResultInterface
-        }
     }
 }

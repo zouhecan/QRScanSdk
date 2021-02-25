@@ -1,6 +1,6 @@
 # QRScanSdk
 Android扫码工具sdk，基于camera预览 + zxing解析。 
-v1.1: 使用老版camera api实现; 
+v1.2: 使用老版camera api实现; 
 v2.1: 使用新版camera2 api实现。
 https://juejin.cn/post/6927664078806581261
 

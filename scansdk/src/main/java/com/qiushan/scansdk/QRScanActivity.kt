@@ -137,7 +137,12 @@ class QRScanActivity : AppCompatActivity(), QRScanResultCallback {
 
     override fun onResult(result: String?) {
         soundPlayer?.start()
-        Toast.makeText(this, "扫码成功：$result", Toast.LENGTH_LONG).show()
+        QRScanManager.sendScanResult(result)
         finish()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        QRScanManager.removeCallback()
     }
 }

@@ -18,7 +18,7 @@ Step 2. Add the dependency
 	dependencies {
 	        implementation 'com.github.zouhecan:QRScanSdk:2.1'
 	}
-![](https://jitpack.io/v/zouhecan/QRScanSdk.svg)](https://jitpack.io/#zouhecan/QRScanSdk)
+![](https://jitpack.io/v/zouhecan/QRScanSdk.svg)(https://jitpack.io/#zouhecan/QRScanSdk)
 
 Step 3. Using QRScanSdk in your activity
 
